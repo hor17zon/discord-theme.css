@@ -1,78 +1,150 @@
-/**
- * @name Hollow Knight - Hallownest Edition
- * @author hor17zon
- * @version 2.0.0
- */
-
-@font-face {
-  font-family: "Romanica";
-  src: url("https://github.com/Sakiro64/Separated-fonts-and-sounds-for-my-themes/raw/refs/heads/main/Romanica.ttf") format("truetype");
-}
-
-:root {
-  --hk-bg-dark: #071826;
-  --hk-bg-darker: #050f18;
-  --hk-accent: #3ecbff;
-  --hk-glow: #69eaff;
-  --hk-selected: #0e2a3d;
-}
-
-/* Background */
+/* ===== MAIN BACKGROUND ===== */
 body {
-  background: url("https://raw.githubusercontent.com/Sakiro64/Separated-fonts-and-sounds-for-my-themes/refs/heads/main/HK_BG.jpg") center/cover no-repeat fixed;
+    --hk-bg: url("https://i.ytimg.com/vi/ldZ8AoK5BkA/hq720.jpg");
 }
 
-/* Dark overlay */
-.appMount_fae9dd::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 10, 20, 0.75);
-  backdrop-filter: blur(4px);
-  pointer-events: none;
+.appMount-2yBXZl,
+.app-2CXKsg {
+    background: linear-gradient(180deg, #0b1b2b 0%, #07112a 100%);
 }
 
-/* Font */
-body, button, input, textarea {
-  font-family: "Romanica", serif !important;
-  color: #cfefff !important;
+.bg-1QIAus {
+    background: 
+        linear-gradient(rgba(5, 15, 35, 0.85), rgba(5, 15, 35, 0.85)),
+        var(--hk-bg) center/cover no-repeat fixed;
+    position: relative;
+    overflow: hidden;
 }
 
-/* Sidebar */
-[class*="sidebar"] {
-  background-color: var(--hk-bg-dark) !important;
+/* ===== FLOATING BUTTERFLIES ===== */
+@keyframes floatButterfly {
+    0% { transform: translateY(0) translateX(0) rotate(0deg); opacity: 0; }
+    50% { transform: translateY(-15px) translateX(10px) rotate(10deg); opacity: 0.6; }
+    100% { transform: translateY(0) translateX(0) rotate(0deg); opacity: 0; }
 }
 
-/* Chat area */
-[class*="chat"] {
-  background-color: rgba(5, 15, 24, 0.85) !important;
+.bg-1QIAus::before {
+    content: "🦋🦋🦋🦋🦋";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    font-size: 14px;
+    animation: floatButterfly 12s infinite ease-in-out;
+    pointer-events: none;
+    color: rgba(95, 220, 255, 0.3);
 }
 
-/* Selected channel */
-[class*="selected"] {
-  background-color: var(--hk-selected) !important;
-  box-shadow: inset 0 0 10px var(--hk-glow);
+/* ===== SIDEBAR ===== */
+.sidebar-1tnWFu {
+    background: rgba(10, 35, 55, 0.85) !important;
+    backdrop-filter: blur(10px);
+    position: relative;
 }
 
-/* Mentions */
-[class*="mentioned"] {
-  background-color: rgba(62, 203, 255, 0.15) !important;
-  border-left: 3px solid var(--hk-accent);
+/* Channel hover & selection */
+.containerDefault-YUSmu3:hover {
+    background: rgba(95, 220, 255, 0.1);
+    border-left: 3px solid #5fdcff;
+    box-shadow: 0 0 8px #5fdcff inset;
+    transition: 0.3s ease;
 }
 
-/* Buttons */
-button {
-  background-color: #0c2c40 !important;
-  color: var(--hk-accent) !important;
-  border: 1px solid var(--hk-accent) !important;
+.modeSelected-3DmyhH .content-1gYQeQ {
+    background: rgba(95, 220, 255, 0.15);
+    border-left: 3px solid #5fdcff;
+    box-shadow: 0 0 12px #5fdcff inset;
 }
 
-/* Links */
-a {
-  color: var(--hk-accent) !important;
+/* ===== TOP BAR ===== */
+.title-31SJ6t {
+    background: rgba(7, 26, 42, 0.9);
+    backdrop-filter: blur(8px);
 }
 
-/* Subtle glow text effect */
-h1, h2, h3 {
-  text-shadow: 0 0 8px var(--hk-glow);
+/* ===== CHAT AREA ===== */
+.chatContent-3KubbW {
+    background: rgba(5, 20, 35, 0.75);
+    backdrop-filter: blur(6px);
+}
+
+/* Message hover glow */
+.message-2CShn3:hover {
+    background: rgba(95, 220, 255, 0.05);
+    box-shadow: 0 0 10px rgba(95, 220, 255, 0.2) inset;
+    transition: 0.2s ease;
+}
+
+/* ===== USER PANEL ===== */
+.panels-3wFtMD {
+    background: rgba(10, 35, 55, 0.9);
+    backdrop-filter: blur(10px);
+}
+
+/* ===== BUTTONS ===== */
+.button-38aScr,
+.lookFilled-yCfaCM.colorBrand-3pXr91 {
+    background-color: #0e3b5e !important;
+    border-radius: 8px;
+    transition: 0.2s ease;
+}
+
+.button-38aScr:hover,
+.lookFilled-yCfaCM.colorBrand-3pXr91:hover {
+    background-color: #145a87 !important;
+    box-shadow: 0 0 12px #5fdcff;
+}
+
+/* ===== TEXT GLOW ===== */
+.username-1A8OIy,
+.headerText-1qIDDT {
+    color: #d8f7ff !important;
+    text-shadow: 0 0 6px #5fdcff;
+}
+
+/* ===== SCROLLBAR ===== */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #0e3b5e;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #5fdcff;
+}
+
+/* ===== SETTINGS PAGE ===== */
+.layer-86YKbF {
+    background: rgba(5, 20, 35, 0.95);
+}
+
+/* ===== MODAL WINDOWS ===== */
+.root-1CAIjD {
+    background: rgba(10, 35, 55, 0.95) !important;
+    backdrop-filter: blur(12px);
+    border-radius: 12px;
+}
+
+/* ===== STATUS COLORS ===== */
+.status-1AY8sU {
+    box-shadow: 0 0 8px #5fdcff;
+}
+
+/* ===== REMOVE DEFAULT GREY / MAKE DARK THEME TRANSPARENT ===== */
+.theme-dark,
+.theme-dark .appMount-2yBXZl,
+.theme-dark .app-2CXKsg,
+.theme-dark .layer-86YKbF,
+.theme-dark .root-1CAIjD,
+.theme-dark .sidebar-1tnWFu,
+.theme-dark .chatContent-3KubbW,
+.theme-dark .panels-3wFtMD,
+.theme-dark .title-31SJ6t {
+    background-color: transparent !important;
+    --background-primary: transparent !important;
+    --background-secondary: transparent !important;
+    --background-tertiary: transparent !important;
+}
 }
