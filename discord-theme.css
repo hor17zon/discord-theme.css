@@ -1,98 +1,78 @@
 /**
- * @name Hollow Knight Theme
+ * @name Hollow Knight - Hallownest Edition
  * @author hor17zon
- * @version 1.0.0
- * @description A Hollow Knight themed Discord experience
- * @website https://github.com/hor17zon/hollow-knight-discord-theme
+ * @version 2.0.0
  */
 
-@import url('https://fonts.googleapis.com/css2?family=Romanica&display=swap');
+@font-face {
+  font-family: "Romanica";
+  src: url("https://github.com/Sakiro64/Separated-fonts-and-sounds-for-my-themes/raw/refs/heads/main/Romanica.ttf") format("truetype");
+}
 
 :root {
-  --brand: #ff5729;
-  --brand-500: #ff5733;
-  --primary-dark-400: #be09b8;
-  --primary-dark-360: #d8d9d8;
-  --primary-dark-300: #f0f0f0;
-  --primary-dark-200: #ff8282;
-  --accent-color: #e3fa3f;
-  --mention-highlight: #26e3cd;
-  --background-secondary: #b0af34;
-  --background-primary: #713cc2;
-  --link-color: #ff5729;
-  --link-500: #ff5555;
-  --white-500: #ffffff;
-  --active-channel: #8ACE32;
-  --sidebar-active: #8ACE32;
-  --sidebar-pins-off: #f0f0f0;
-  --thread-color: #be1fbe;
-  --channels-selected: #8ACE32;
-  --channels-default: #25004d;
+  --hk-bg-dark: #071826;
+  --hk-bg-darker: #050f18;
+  --hk-accent: #3ecbff;
+  --hk-glow: #69eaff;
+  --hk-selected: #0e2a3d;
 }
 
-* {
-  font-family: 'Romanica', sans-serif !important;
-}
-
+/* Background */
 body {
-  background: url('https://raw.githubusercontent.com/Sakiro64/Separated-fonts-and-sounds-for-my-themes/refs/heads/main/HK_BG.jpg') center/cover fixed;
-  background-attachment: fixed;
+  background: url("https://raw.githubusercontent.com/Sakiro64/Separated-fonts-and-sounds-for-my-themes/refs/heads/main/HK_BG.jpg") center/cover no-repeat fixed;
 }
 
-.bg_a4d13f,
-.layer_a4d13f {
-  background: rgba(17, 17, 17, 0.47) !important;
-  backdrop-filter: blur(2px);
+/* Dark overlay */
+.appMount_fae9dd::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 10, 20, 0.75);
+  backdrop-filter: blur(4px);
+  pointer-events: none;
 }
 
-.wrapper_be9c6e {
-  background-color: var(--background-primary) !important;
+/* Font */
+body, button, input, textarea {
+  font-family: "Romanica", serif !important;
+  color: #cfefff !important;
 }
 
-.chat_e7b922 {
-  background-color: var(--background-secondary) !important;
+/* Sidebar */
+[class*="sidebar"] {
+  background-color: var(--hk-bg-dark) !important;
 }
 
-.container_a3d5d2 {
-  background-color: var(--primary-dark-300) !important;
+/* Chat area */
+[class*="chat"] {
+  background-color: rgba(5, 15, 24, 0.85) !important;
 }
 
-.selected_ae80f0 {
-  background-color: var(--active-channel) !important;
-  color: #000 !important;
+/* Selected channel */
+[class*="selected"] {
+  background-color: var(--hk-selected) !important;
+  box-shadow: inset 0 0 10px var(--hk-glow);
 }
 
-.unreadRelevant_e4aaf3 {
-  background-color: var(--mention-highlight) !important;
+/* Mentions */
+[class*="mentioned"] {
+  background-color: rgba(62, 203, 255, 0.15) !important;
+  border-left: 3px solid var(--hk-accent);
 }
 
+/* Buttons */
+button {
+  background-color: #0c2c40 !important;
+  color: var(--hk-accent) !important;
+  border: 1px solid var(--hk-accent) !important;
+}
+
+/* Links */
 a {
-  color: var(--link-color) !important;
+  color: var(--hk-accent) !important;
 }
 
-.theme-dark {
-  --brand: var(--brand);
-  --brand-500: var(--brand-500);
-  --primary-dark-400: var(--primary-dark-400);
-  --primary-dark-300: var(--primary-dark-300);
-  --primary-dark-200: var(--primary-dark-200);
-  --accent-color: var(--accent-color);
-}
-
-.tooltip {
-  background-color: var(--primary-dark-400) !important;
-  color: #fff !important;
-}
-
-.side-8zLA7g {
-  background-color: var(--background-primary) !important;
-}
-
-button[type="button"] {
-  background-color: var(--accent-color) !important;
-  color: #000 !important;
-}
-
-.notificationsBadge_f0d458 {
-  background-color: var(--mention-highlight) !important;
+/* Subtle glow text effect */
+h1, h2, h3 {
+  text-shadow: 0 0 8px var(--hk-glow);
 }
