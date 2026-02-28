@@ -9,22 +9,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Romanica&display=swap');
 
 :root {
-  --brand-color: #f1ad09;
+  --brand: #ff5729;
   --brand-500: #ff5733;
   --primary-dark-400: #be09b8;
   --primary-dark-360: #d8d9d8;
   --primary-dark-300: #f0f0f0;
+  --primary-dark-200: #ff8282;
   --accent-color: #e3fa3f;
   --mention-highlight: #26e3cd;
   --background-secondary: #b0af34;
   --background-primary: #713cc2;
-  --link-color: #ff5733;
+  --link-color: #ff5729;
   --link-500: #ff5555;
   --white-500: #ffffff;
-  --sidebar-active: #88c63f;
-  --sidebar-pins-off: #d0a0c8;
+  --active-channel: #8ACE32;
+  --sidebar-active: #8ACE32;
+  --sidebar-pins-off: #f0f0f0;
   --thread-color: #be1fbe;
-  --channels-selected: #16ec34;
+  --channels-selected: #8ACE32;
   --channels-default: #25004d;
 }
 
@@ -56,7 +58,7 @@ body {
 }
 
 .selected_ae80f0 {
-  background-color: var(--accent-color) !important;
+  background-color: var(--active-channel) !important;
   color: #000 !important;
 }
 
@@ -69,9 +71,11 @@ a {
 }
 
 .theme-dark {
-  --brand-color: var(--brand-color);
+  --brand: var(--brand);
+  --brand-500: var(--brand-500);
   --primary-dark-400: var(--primary-dark-400);
   --primary-dark-300: var(--primary-dark-300);
+  --primary-dark-200: var(--primary-dark-200);
   --accent-color: var(--accent-color);
 }
 
@@ -91,3 +95,4 @@ button[type="button"] {
 
 .notificationsBadge_f0d458 {
   background-color: var(--mention-highlight) !important;
+}
