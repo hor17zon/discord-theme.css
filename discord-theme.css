@@ -1,16 +1,26 @@
-/* ===============================
    MAIN BACKGROUND (WORKING)
 ================================= */
 
-body {
+.theme-dark, 
+.appMount-3lHmkl {
     background: 
-        linear-gradient(rgba(5, 15, 35, 0.85), rgba(5, 15, 35, 0.85)),
+        linear-gradient(rgba(5, 15, 35, 0.3), rgba(5, 15, 35, 0.3)),
         url("https://media.discordapp.net/attachments/1467196039566987466/1477324556216832032/hq720.jpg?format=webp") 
         center / cover no-repeat fixed !important;
 }
 
+/* FLOATING BUTTERFLIES FIXED FOR VENCORD */
+
+@keyframes floatButterfly {
+    0% { transform: translateY(0px) translateX(0px) rotate(0deg); opacity: 0; }
+    25% { opacity: 0.6; }
+    50% { transform: translateY(-40px) translateX(30px) rotate(15deg); opacity: 0.6; }
+    75% { opacity: 0.4; }
+    100% { transform: translateY(-80px) translateX(-30px) rotate(-10deg); opacity: 0; }
+}
+
 /* ===============================
-   FLOATING BUTTERFLIES
+   FLOATING BUTTERFLIES (VENCORD FIX)
 ================================= */
 
 @keyframes floatButterfly {
@@ -21,18 +31,18 @@ body {
     100% { transform: translateY(-80px) translateX(-30px) rotate(-10deg); opacity: 0; }
 }
 
-body::before {
-    content: "🦋 🦋 🦋 🦋 🦋 🦋 🦋 🦋";
+/* Reliable overlay for Vencord */
+.appMount-3lHmkl::before {
+    content: "🦋 🦋 🦋 🦋 🦋 🦋 🦋 🦋 🦋 🦋";
     position: fixed;
     top: 100%;
-    left: 10%;
-    font-size: 20px;
-    animation: floatButterfly 15s linear infinite;
+    left: 5%;
+    font-size: 24px;
+    animation: floatButterfly 20s linear infinite;
     pointer-events: none;
     color: rgba(95, 220, 255, 0.4);
-    z-index: 0;
+    z-index: 1;
 }
-
 /* ===============================
    GLASS EFFECT (GLOBAL)
 ================================= */
@@ -43,7 +53,7 @@ body::before {
 .theme-dark .sidebar-,
 .theme-dark .chat-,
 .theme-dark .panels- {
-    background-color: rgba(5, 20, 35, 0.75) !important;
+    background-color: rgba(5, 20, 35, 0.35) !important; /* reduced opacity */
     backdrop-filter: blur(8px);
 }
 
@@ -52,7 +62,7 @@ body::before {
 ================================= */
 
 nav[aria-label="Servers sidebar"] {
-    background: rgba(10, 35, 55, 0.85) !important;
+    background: rgba(10, 35, 55, 0.65) !important; /* reduced opacity */
     backdrop-filter: blur(10px);
 }
 
